@@ -127,20 +127,22 @@ pip3 install -r requirements.txt
 ``` 
 pip3 list 
 ```
-
-### Actualizar las dependencias dentro del archivo requirements
-- En caso de instalar más dependencias es necesario actualizar el archivo requirements.txt
-- Para obtener los ultimos cambios en dicho archivo y volver a ejecutar e instalar y evitar errores por falta de esas librerias
-
+### En caso que con pip3 list no se instalen las dependencias se debe installar dependencia una por una de la siguiente forma:
 ```
-pip3 freeze > requirements.txt
+pip3 install name_module==number-version
 ```
-- No olvides ejecutar el comando;
-
+### Ejecutar el comando makemigrations 
+- Este comando se encarga de crear nuevas migraciones en función de los cambios que haya realizado en sus modelos
 ```
-pip3 install -r requirements.txt
+python3 manage.py makemigrations
 ```
 
+### Ejecutar las migraciones
+- Este comando se encarga de aplicar y desaplicar migraciones (cambios para la base de datos).
+```
+python3 manage.py migrate
+
+```
 
 ### Ejecutar el servidor
 ```
